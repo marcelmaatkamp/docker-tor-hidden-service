@@ -51,4 +51,6 @@ Add it to the `torrc` file. On a Mac in the Tor Browser this file can be found i
 HidServAuth uifjb4bmt2ilpa2v.onion T3GgNOwr5ML5s5FGZsJ/CR hello
 ```
 
+Restart the Tor Browser and go to http://uifjb4bmt2ilpa2v.onion
+
 See https://github.com/cmehay/docker-tor-hidden-service for more information about this container.
