@@ -59,10 +59,15 @@ class Setup(object):
         assert len(key) > 800
         self.setup[host]['key'] = key
 
+    def _get_auth(self, host, auth):
+        self._add_host(host)
+        self.setup[host]['auth'] = auth
+
     def _get_setup_from_env(self):
         match_map = (
             (r'([A-Z0-9]*)_PORTS', self._get_ports),
             (r'([A-Z0-9]*)_KEY', self._get_key),
+            (r'([A-Z0-9]*)_AUTH', self._get_auth),
         )
         for key, val in os.environ.items():
             for reg, call in match_map:

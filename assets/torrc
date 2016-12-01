@@ -4,10 +4,9 @@ HiddenServiceDir /var/lib/tor/hidden_service/{{service}}
 # PORT {{service}} {{ports[0]}}
 HiddenServicePort {{ports[0]}} {{service}}:{{ports[1]}}
 {% endfor %}
+HiddenServiceAuthorizeClient stealth {{conf.auth}}
 {% endfor %}
-
 {% if 'RELAY' in env %}
 ORPort 9001
 {% endif %}
-
 SocksPort 0
