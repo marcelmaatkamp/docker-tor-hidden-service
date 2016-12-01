@@ -1,10 +1,10 @@
-# docker-tor-hidden-service with client authorization.
+# Docker Tor Hidden Service with Client Authorization.
 
-Create a tor hidden service with a link with client authorization enabled (see _HiddenServiceAuthorizeClient_ in the tor manual).
+Added functionality from https://github.com/cmehay/docker-tor-hidden-service to create a tor hidden service with client authorization enabled (see _HiddenServiceAuthorizeClient_ in the tor manual).
 
 ## Setup
 
-Create a `docker-compose.yml` with the services, in this case a `hello` service and a `hidden` service which makes hello a hidden service:
+Create a `docker-compose.yml` with the services. In this case a `hello`-service and a `hidden`-service which makes hello container a hidden service:
 ```yaml
 version: '2'
 services:
@@ -50,23 +50,4 @@ Add it to the `torrc` file like this:
 HidServAuth uifjb4bmt2ilpa2v.onion T3GgNOwr5ML5s5FGZsJ/CR hello
 ```
 
-### Tools
-
-A command line tool `onions` is available in container to get `.onion` url when container is running.
-
-```sh
-# Get services
-$ docker exec -ti torhiddenproxy_tor_1 onions
-hello: vegm3d7q64gutl75.onion:80
-world: b2sflntvdne63amj.onion:80
-
-# Get json
-$ docker exec -ti torhiddenproxy_tor_1 onions --json
-{"hello": ["b2sflntvdne63amj.onion:80"], "world": ["vegm3d7q64gutl75.onion:80"]}
-```
-
-### pyentrypoint
-
-This container is using [`pyentrypoint`](https://github.com/cmehay/pyentrypoint) to generate its setup.
-
-If you need to use the legacy version, please checkout the `legacy` branch or pull `goldy/tor-hidden-service:legacy`.
+See https://github.com/cmehay/docker-tor-hidden-service for more information about this container.
