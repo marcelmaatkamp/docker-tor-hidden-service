@@ -30,7 +30,7 @@ volumes:
 
 The key to add to your `torrc` file in the tor browser can be extracted from the logfile when the hidden service starts:
 ```
-tor_1    | Entrypoint INFO     hello: uifjb4bmt2ilpa2v.onion* T3GgNOwr5ML5s5FGZsJ/CR # client: 0123456789:80
+tor_1    | Entrypoint INFO     hello: uifjb4bmt2ilpa2v.onion T3GgNOwr5ML5s5FGZsJ/CR # client: 0123456789:80
 tor_1    | Dec 01 14:36:51.682 [notice] Tor 0.2.9.5-alpha (git-330846ac087f7b32) running on Linux with Libevent 2.0.22-stable, OpenSSL 1.0.2j and Zlib 1.2.8.
 tor_1    | Dec 01 14:36:51.682 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://www.torproject.org/download/download#warning
 tor_1    | Dec 01 14:36:51.682 [notice] This version is not a stable Tor release. Expect more bugs than usual.
@@ -43,6 +43,11 @@ tor_1    | Dec 01 14:36:52.000 [notice] Bootstrapped 85%: Finishing handshake wi
 tor_1    | Dec 01 14:36:53.000 [notice] Bootstrapped 90%: Establishing a Tor circuit
 tor_1    | Dec 01 14:36:53.000 [notice] Tor has successfully opened a circuit. Looks like client functionality is working.
 tor_1    | Dec 01 14:36:53.000 [notice] Bootstrapped 100%: Done
+```
+
+Add it to the `torrc` file like this:
+```
+HidServAuth uifjb4bmt2ilpa2v.onion T3GgNOwr5ML5s5FGZsJ/CR hello
 ```
 
 ### Tools
