@@ -44,7 +44,8 @@ tor_1    | Dec 01 14:36:53.000 [notice] Tor has successfully opened a circuit. L
 tor_1    | Dec 01 14:36:53.000 [notice] Bootstrapped 100%: Done
 ```
 
-Add it to the `torrc` file. On a Mac in the Tor Browser this file can be found in `/Applications/TorBrowser.app/Contents/Resources/TorBrowser/Tor/torrc-defaults`:
+Add it to the `torrc` file. On a Mac in the Tor Browser this file can be found in `/Applications/TorBrowser.app/Contents/Resources/TorBrowser/Tor/torrc-defaults` or
+`~/Library/Application Support/TorBrowser-Data/torrc`
 ```
 ...
 HidServAuth uifjb4bmt2ilpa2v.onion T3GgNOwr5ML5s5FGZsJ/CR hello
