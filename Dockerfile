@@ -15,7 +15,7 @@ RUN     apk add --no-cache git libevent-dev openssl-dev gcc make automake ca-cer
         make && make install && \
         cd .. && \
         rm -rf tor && \
-        apk add --no-cache python3 python3-dev && \
+        apk add --no-cache python3 python3-dev py-pip && \
         python3 -m ensurepip && \
         rm -r /usr/lib/python*/ensurepip && \
         pip3 install --upgrade pip setuptools pycrypto && \
